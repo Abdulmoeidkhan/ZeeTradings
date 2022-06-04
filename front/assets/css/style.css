@@ -536,11 +536,11 @@ ol {
   Intro section
 ---------------------*/
 
-.intro-slider .intro-item ,.popular-slider .intro-item {
+.intro-slider .intro-item {
 	padding: 30px 0;
 }
 
-.intro-slider .intro-item figure ,.popular-slider .intro-item figure {
+.intro-slider .intro-item figure {
 	position: relative;
 	-webkit-transform: scale(1, 1);
 	-ms-transform: scale(1, 1);
@@ -549,13 +549,12 @@ ol {
 	-o-transition: all 0.4s;
 	transition: all 0.4s;
 }
-
-.intro-slider .intro-item figure img ,.popular-slider .intro-item figure img {
+.intro-slider .intro-item figure img {
 	width: 500px;
 	height: 250px;
 }
 
-.intro-slider .intro-item figure .bache ,.popular-slider .intro-item figure .bache {
+.intro-slider .intro-item figure .bache {
 	position: absolute;
 	min-width: 59px;
 	height: 59px;
@@ -570,7 +569,7 @@ ol {
 	opacity: 0;
 }
 
-.intro-slider .intro-item .product-info ,.popular-slider .intro-item .product-info {
+.intro-slider .intro-item .product-info {
 	opacity: 0;
 	padding-top: 75px;
 	text-align: center;
@@ -579,18 +578,18 @@ ol {
 	transition: all 0.4s;
 }
 
-.intro-slider .intro-item .product-info h5 ,.popular-slider .intro-item .product-info h5 {
+.intro-slider .intro-item .product-info h5 {
 	text-transform: uppercase;
 	font-weight: 700;
 	margin-bottom: 5px;
 }
 
-.intro-slider .intro-item .product-info p ,.popular-slider .intro-item .product-info p {
+.intro-slider .intro-item .product-info p {
 	font-size: 24px;
 	color: #8d8d8d;
 }
 
-.intro-slider .active .intro-item figure ,.popular-slider .active .intro-item figure {
+.intro-slider .active .intro-item figure {
 	outline: 7px solid #414141;
 	outline-offset: -7px;
 	-webkit-transform: scale(1.06, 1.07);
@@ -598,16 +597,15 @@ ol {
 	transform: scale(1.06, 1.07);
 }
 
-.intro-slider .active .intro-item figure .bache ,.popular-slider .active .intro-item figure .bache {
+.intro-slider .active .intro-item figure .bache {
 	opacity: 1;
 }
 
-.intro-slider .active .intro-item .product-info ,.popular-slider .active .intro-item .product-info {
+.intro-slider .active .intro-item .product-info {
 	opacity: 1;
 }
 
-.scrollbar,
-.popular-scrollbar {
+.scrollbar {
 	margin: 80px auto 0;
 	width: 100%;
 	height: 7px;
@@ -616,16 +614,14 @@ ol {
 	overflow: hidden;
 }
 
-.scrollbar .handle,
-.popular-scrollbar .handle {
+.scrollbar .handle {
 	width: 100px;
 	height: 100%;
 	background: #fff;
 	cursor: pointer;
 }
 
-.scrollbar .handle .mousearea,
-.popular-scrollbar .handle .mousearea {
+.scrollbar .handle .mousearea {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -635,19 +631,19 @@ ol {
 	border-radius: 30px;
 }
 
-.intro-slider ,.popular-slider {
+.intro-slider {
 	width: 100%;
 	padding: 0;
 }
 
-.intro-slider .slidee ,.popular-slider .slidee {
+.intro-slider .slidee {
 	margin: 0;
 	padding: 0;
 	height: 100%;
 	list-style: none;
 }
 
-.intro-slider .slidee li ,.popular-slider .slidee li {
+.intro-slider .slidee li {
 	float: left;
 	margin: 0 32px;
 	padding: 0;
@@ -1963,7 +1959,7 @@ ol {
 		padding: 0 120px;
 	}
 
-	.intro-slider .slidee li ,.popular-slider .slidee li {
+	.intro-slider .slidee li {
 		width: 300px;
 	}
 
@@ -2073,7 +2069,7 @@ ol {
 		font-size: 55px;
 	}
 
-	.intro-slider .slidee li ,.popular-slider .slidee li {
+	.intro-slider .slidee li {
 		width: 240px;
 	}
 

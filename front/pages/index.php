@@ -48,7 +48,7 @@
 	<section class="hero-section set-bg" data-setbg="../assets/img/bg.jpg">
 		<div class="hero-slider owl-carousel">
 			<div class="hs-item">
-				<div class="hs-left"><img src="../../pictures/banner-1.png" alt=""></div>
+				<div class="hs-left"><img src="../../pictures/banner-1.png" style="margin-top:150px ;" alt=""></div>
 				<div class="hs-right">
 					<div class="hs-content">
 						<div class="price">Enjoy Each Healthy Grain Of Rice</div>
@@ -57,7 +57,7 @@
 				</div>
 			</div>
 			<div class="hs-item">
-				<div class="hs-left"><img src="../../pictures/banner-2.png" alt=""></div>
+				<div class="hs-left"><img src="../../pictures/banner-2.png" style="margin-top:150px ;" alt=""></div>
 				<div class="hs-right">
 					<div class="hs-content">
 						<div class="price">Eat healthly and live healthily</div>
@@ -66,7 +66,7 @@
 				</div>
 			</div>
 			<div class="hs-item">
-				<div class="hs-left"><img src="../../pictures/banner-3.png" alt=""></div>
+				<div class="hs-left"><img src="../../pictures/banner-3.png"  alt=""></div>
 				<div class="hs-right">
 					<div class="hs-content">
 						<div class="price">Eat healthly and live healthily</div>
@@ -80,7 +80,7 @@
 
 
 	<!-- Intro section -->
-	<section class="intro-section spad pb-0">
+	<section class="intro-section spad pb-0 slider-1">
 		<div class="section-title">
 			<h2>Hot Products</h2>
 			<p>We recommend</p>
@@ -144,12 +144,12 @@
 
 
 	<!-- Intro section -->
-	<section class="intro-section spad pb-0">
+	<section class="intro-section spad pb-0 slider-2">
 		<div class="section-title">
 			<h2>Popular Products</h2>
 			<p>We recommend</p>
 		</div>
-		<div class="popular-slider">
+		<div class="intro-slider">
 			<ul class="slidee">
 				<?php
 				require("../../functions/conn.php");

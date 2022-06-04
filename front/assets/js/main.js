@@ -65,9 +65,9 @@ $(window).on('load', function() {
 	/*------------------
 		Intro Slider
 	--------------------*/
-	if($('.intro-slider').length > 0 ) {
+	if($('.slider-1 .intro-slider').length > 0 ) {
 		var $scrollbar = $('.scrollbar');
-		var $frame = $('.intro-slider');
+		var $frame = $('.slider-1 .intro-slider');
 		var sly = new Sly($frame, {
 			horizontal: 1,
 			itemNav: 'forceCentered',
@@ -89,7 +89,33 @@ $(window).on('load', function() {
 			clickBar: 1,
 		}).init();
 	}
-
+	/*------------------
+		Intro Slider
+	--------------------*/
+	if($('.slider-2 .intro-slider').length > 0 ) {
+		var $scrollbar = $('.scrollbar');
+		var $frame = $('.slider-2 .intro-slider');
+		var sly = new Sly($frame, {
+			horizontal: 1,
+			itemNav: 'forceCentered',
+			activateMiddle: 1,
+			smart: 1,
+			activateOn: 'click',
+			//mouseDragging: 1,
+			touchDragging: 1,
+			releaseSwing: 1,
+			startAt: 10,
+			scrollBar: $scrollbar,
+			//scrollBy: 1,
+			activatePageOn: 'click',
+			speed: 200,
+			moveBy: 600,
+			elasticBounds: 1,
+			dragHandle: 1,
+			dynamicHandle: 1,
+			clickBar: 1,
+		}).init();
+	}
 
 
 	/*------------------
