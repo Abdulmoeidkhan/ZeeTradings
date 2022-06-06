@@ -2,6 +2,7 @@
 session_start();
 require("./conn.php");
 $_SESSION["sign_In_Err"] = false;
+$_SESSION['cart'] = [];
 if (isset($_POST["Submit"]) && strlen($_POST['uName']) > 0 && strlen($_POST['uPass']) > 5) {
     $req = "SELECT * FROM `customer_user_db` WHERE 
     customerPass='" . $_POST['uPass'] . "' and

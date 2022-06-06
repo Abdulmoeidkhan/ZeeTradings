@@ -90,7 +90,7 @@ if (isset($_SESSION["uId"])) {
                                                         <div class="d-flex justify-content-center"><?php echo $row["customerName"] ?></div>
                                                     </td>
                                                     <td>
-                                                        <div class="d-flex justify-content-center"><?php echo $row["orderType"]==0?"Order":"Invoice"; ?></div>
+                                                        <div class="d-flex justify-content-center"><?php echo $row["orderType"] == 0 ? "Order" : "Invoice"; ?></div>
                                                     </td>
                                                     <td>
                                                         <div class="d-flex justify-content-center"><?php echo $row["orderAmount"] ?></div>
@@ -132,15 +132,15 @@ if (isset($_SESSION["uId"])) {
             function deleteFunc(id) {
                 let valToBeCheck = prompt('Type delete To Delete User');
                 if (valToBeCheck === 'delete') {
-                    window.loorderion.href = '../../../functions/deleteOrder.php?orderId=' + id;
+                    window.location.href = '../../../functions/deleteOrder.php?orderId=' + id;
                 }
             }
         </script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="../../utils/js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="../../utils/js/scripts.js"></script>
         <script src="../../utils/js/datatables-simple-demo.js"></script>
 
     </body>

@@ -288,12 +288,17 @@ ol {
 ---------------------*/
 
 .header-section {
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	padding: 30px 33px 0;
 	left: 0;
 	top: 0;
-	z-index: 99;
+	z-index: 2;
+	/* Created with https://www.css-gradient.com */
+	background: #a36ec8;
+	background: -webkit-linear-gradient(top left, #a36ec8, #ca7bce);
+	background: -moz-linear-gradient(top left, #a36ec8, #ca7bce);
+	background: linear-gradient(to bottom right, #a36ec8, #ca7bce);
 }
 
 .header-section.header-normal {
@@ -339,6 +344,7 @@ ol {
 	color: #fff;
 	padding: 8px 5px 0;
 	margin-left: 50px;
+	text-decoration: none;
 }
 
 .header-right {
@@ -393,6 +399,7 @@ ol {
 	background: #000;
 	background-position: bottom center;
 	overflow: hidden;
+	margin-top: 50px;
 }
 
 .hero-slider {
@@ -549,6 +556,7 @@ ol {
 	-o-transition: all 0.4s;
 	transition: all 0.4s;
 }
+
 .intro-slider .intro-item figure img {
 	width: 500px;
 	height: 250px;
@@ -1377,7 +1385,8 @@ ol {
 
 .cart-table .product-col img {
 	display: table-cell;
-	max-width: 187px;
+	max-width: 500px;
+	max-height: 300px
 }
 
 .cart-table .product-col .pc-title {
@@ -2144,11 +2153,14 @@ ol {
 	}
 
 	.cart-table .product-col img {
-		max-width: 110px;
+		/* max-width: 110px; */
+		max-width: 500px;
+		max-height: 300px
 	}
 
 	.cart-table .quy-input {
 		width: 135px;
+
 	}
 
 	.cart-buttons .btn-continue,

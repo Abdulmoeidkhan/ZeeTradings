@@ -73,7 +73,7 @@
 					<div class="col-md-12">
 						<textarea placeholder="Message" name="ctcMessage"></textarea>
 						<div class="text-center">
-							<input type="submit" name="formSubmit" class="site-btn">Send Message</a>
+							<input type="submit" name="formSubmit" class="site-btn" value="Send Message">
 						</div>
 					</div>
 				</div>

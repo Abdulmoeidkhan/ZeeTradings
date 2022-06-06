@@ -34,7 +34,7 @@ if (isset($_REQUEST['formSubmit'])) {
     // print_r($uploadedPic);
     // $uploadedPic["secure_url"]="https://";
     if (isset($_SESSION["uId"])) {
-        require("./conn.php");
+        require("../conn.php");
         $name = $_REQUEST['brandName'];
         $description = $_REQUEST['brandDesc'];
         $subDescription = $_REQUEST['brandShortDesc'];

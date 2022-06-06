@@ -1,6 +1,6 @@
-<!-- <?php
-		session_start();
-		?> -->
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +26,44 @@
 	<link rel="stylesheet" href="../assets/css/style.css" />
 	<link rel="stylesheet" href="../assets/css/animate.css" />
 
+	<!-- Top Button CSS -->
+
+	<style>
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 20px;
+
+		}
+
+		#myTopBtn {
+			display: none;
+			position: fixed;
+			bottom: 20px;
+			right: 30px;
+			z-index: 99;
+			font-size: 18px;
+			border: none;
+			outline: none;
+			color: white;
+			cursor: pointer;
+			padding: 15px;
+			border-radius: 4px;
+			background: #a36ec8;
+			background: -webkit-linear-gradient(top left, #a36ec8, #ca7bce);
+			background: -moz-linear-gradient(top left, #a36ec8, #ca7bce);
+			background: linear-gradient(to bottom right, #a36ec8, #ca7bce);
+
+		}
+
+		#myTopBtn:hover {
+			background-color: #555;
+		}
+	</style>
+
 
 	<!--[if lt IE 9]>
 	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -35,6 +73,10 @@
 </head>
 
 <body>
+
+	<!-- Top Button -->
+	<button onclick="topFunction()" id="myTopBtn" title="Go to top">&#8593;</button>
+
 	<!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader"></div>
@@ -66,7 +108,7 @@
 				</div>
 			</div>
 			<div class="hs-item">
-				<div class="hs-left"><img src="../../pictures/banner-3.png"  alt=""></div>
+				<div class="hs-left"><img src="../../pictures/banner-3.png" alt=""></div>
 				<div class="hs-right">
 					<div class="hs-content">
 						<div class="price">Eat healthly and live healthily</div>
@@ -100,13 +142,9 @@
 				p.productImg, 
 				p.productAddedTime, 
 				p.productUpdateTime, 
-				s.staffName as st1, 
-				st.staffName as st2, 
 				c.catName as catName, 
 				sc.subCatName as subCatName 
 				from `product_db` as p 
-				left join staff_user_db as s on p.productAddedBy=s.stafFId 
-				left join staff_user_db as st on p.productUpdateBy=st.stafFId 
 				left join product_sub_category_db as sc on p.productSubCatId=sc.subCatId 
 				left join product_category_db as c on p.productCatId=c.catId 
 				WHERE p.deleted=0 and subCatName='Hot';";
@@ -121,8 +159,19 @@
 								</figure>
 								<div class="product-info">
 									<h5><?php echo $row['productName']; ?></h5>
-									<p><?php echo isset($_SESSION["uId"])?$row['productAmount']:"Please Sign In First" ?></p>
-									<a href="#" class="site-btn btn-line">ADD TO CART</a>
+									<p><?php echo isset($_SESSION["uId"]) ? $row['productAmount'] : "Please Sign In First" ?></p>
+									<?php if (isset($_SESSION["uId"])) { ?>
+										<form name="formings" name="formings" method="post" action="#" id="Hot-<?php echo $row['productId'] ?>">
+											<input type="hidden" value="<?php echo $row['productAmount'] ?>" name="productAmount" />
+											<input type="hidden" value="<?php echo $row['productId'] ?>" name="productId" />
+											<input type="hidden" value="1" name="productQuan" />
+											<!-- <input class="site-btn btn-line" type="submit" name="formSubmit" value="ADD TO CART" /> -->
+											<input class="site-btn btn-line" type="button" onClick='addProd("Hot-<?php echo $row['productId'] ?>")' name="formSubmit" value="ADD TO CART" />
+										</form>
+									<?php
+									};
+									?>
+									<!-- <a href="#" class="site-btn btn-line">ADD TO CART</a> -->
 								</div>
 							</div>
 						</li>
@@ -164,19 +213,17 @@
 				p.productImg, 
 				p.productAddedTime, 
 				p.productUpdateTime, 
-				s.staffName as st1, 
-				st.staffName as st2, 
 				c.catName as catName, 
 				sc.subCatName as subCatName 
 				from `product_db` as p 
-				left join staff_user_db as s on p.productAddedBy=s.stafFId 
-				left join staff_user_db as st on p.productUpdateBy=st.stafFId 
 				left join product_sub_category_db as sc on p.productSubCatId=sc.subCatId 
 				left join product_category_db as c on p.productCatId=c.catId 
 				WHERE p.deleted=0 and subCatName='Popular';";
 				$data = $connection->query($ProductFetch);
 				if ($data) {
+					$i = 0;
 					while ($row = $data->fetch_assoc()) {
+						$i++
 				?>
 						<li>
 							<div class="intro-item">
@@ -185,8 +232,18 @@
 								</figure>
 								<div class="product-info">
 									<h5><?php echo $row['productName']; ?></h5>
-									<p><?php echo isset($_SESSION["uId"])?$row['productAmount']:"Please Sign In First" ?></p>
-									<a href="#" class="site-btn btn-line">ADD TO CART</a>
+									<p><?php echo isset($_SESSION["uId"]) ? $row['productAmount'] : "Please Sign In First" ?></p>
+									<?php if (isset($_SESSION["uId"])) { ?>
+										<form name="formings" method="post" action="#" id="Popular-<?php echo $row['productId'] ?>">
+											<!-- action="../../functions/cart/cart.php" -->
+											<input type="hidden" value="<?php echo $row['productAmount'] ?>" name="productAmount" />
+											<input type="hidden" value="<?php echo $row['productId'] ?>" name="productId" />
+											<input type="hidden" value="1" name="productQuan" />
+											<!-- <input class="site-btn btn-line" type="submit" name="formSubmit" value="ADD TO CART" /> -->
+											<input class="site-btn btn-line" type="button" onClick='addProd("Popular-<?php echo $row['productId'] ?>")' name="formSubmit" value="ADD TO CART" />
+										</form>
+									<?php } ?>
+									<!-- <a href="#" class="site-btn btn-line">ADD TO CART</a> -->
 								</div>
 							</div>
 						</li>
@@ -230,13 +287,9 @@
 				p.productImg, 
 				p.productAddedTime, 
 				p.productUpdateTime, 
-				s.staffName as st1, 
-				st.staffName as st2, 
 				c.catName as catName, 
 				sc.subCatName as subCatName 
 				from `product_db` as p 
-				left join staff_user_db as s on p.productAddedBy=s.stafFId 
-				left join staff_user_db as st on p.productUpdateBy=st.stafFId 
 				left join product_sub_category_db as sc on p.productSubCatId=sc.subCatId 
 				left join product_category_db as c on p.productCatId=c.catId 
 				WHERE p.deleted=0;";
@@ -252,8 +305,18 @@
 								</figure>
 								<div class="product-info">
 									<h6><?php echo $row['productName'] ?></h6>
-									<p><?php echo isset($_SESSION["uId"])?$row['productAmount']:"Please Sign In First" ?></p>
-									<a href="#" class="site-btn btn-line">ADD TO CART</a>
+									<p><?php echo isset($_SESSION["uId"]) ? $row['productAmount'] : "Please Sign In First" ?></p>
+									<!-- <form method="post" action="../../functions/cart/cart.php"> -->
+									<?php if (isset($_SESSION["uId"])) { ?>
+										<form name="formings" method="post" action="#" id="<?php echo $row['productId'] ?>">
+											<input type="hidden" value="<?php echo $row['productAmount'] ?>" name="productAmount" />
+											<input type="hidden" value="<?php echo $row['productId'] ?>" name="productId" />
+											<input type="hidden" value="1" name="productQuan" />
+											<!-- <input class="site-btn btn-line" type="submit" name="formSubmit" value="ADD TO CART" /> -->
+											<input class="site-btn btn-line" type="button" onClick='addProd("<?php echo $row['productId'] ?>")' name="formSubmit" value="ADD TO CART" />
+										</form>
+									<?php } ?>
+									<!-- <a href="#" class="site-btn btn-line">ADD TO CART</a> -->
 								</div>
 							</div>
 						</div>
@@ -427,7 +490,68 @@
 	<?php
 	require("../components/footer.php");
 	footer();
+	// $_SESSION['cart']=[];
 	?>
+
+	<!-- manual script  -->
+	<script>
+		function addProd(id) {
+
+			// $(id).submit(function(e) {
+			// e.preventDefault();
+			$.ajax({
+				type: 'post',
+				url: '../../functions/cart/cart.php',
+				data: $("#" + id).serialize(),
+				async: true,
+				success: function(resp) {
+					console.log(resp)
+					// console.log(`<?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : "0"; ?>`)
+					document.getElementById('cart-val').innerHTML = `${resp}`;
+				},
+				error: function(err) {
+					console.log(err)
+				}
+			});
+		}
+
+		// console.log($('form').serialize());
+		// var xmlhttp = new XMLHttpRequest();
+		// xmlhttp.onreadystatechange = function() {
+		// 	if (this.readyState == 4 && this.status == 200) {
+		// 		document.getElementById("cart-val").innerHTML = this.responseText;
+		// 	}
+		// }
+		// xmlhttp.open("POST", "../../functions/cart/cart.php", true);
+		// xmlhttp.send();
+		// console.log(`<?php echo isset($_SESSION['cart']) ? json_encode($_SESSION['cart']) : "Nothing to show"; ?>`)
+
+		// });
+	</script>
+
+	<script>
+		//Get the button
+		var mybutton = document.getElementById("myTopBtn");
+
+		// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function() {
+			scrollFunction()
+		};
+
+		function scrollFunction() {
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				mybutton.style.display = "block";
+			} else {
+				mybutton.style.display = "none";
+			}
+		}
+
+		// When the user clicks on the button, scroll to the top of the document
+		function topFunction() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+	</script>
 
 
 	<!--====== Javascripts & Jquery ======-->

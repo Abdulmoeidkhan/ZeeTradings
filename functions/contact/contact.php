@@ -17,22 +17,21 @@ function guidv4($data = null)
 }
 $myuuid = guidv4();
 if (isset($_REQUEST['formSubmit'])) {
-    require("./conn.php");
+    require("../conn.php");
     $ctcEmail = $_REQUEST['ctcEmail'];
     $ctcNumber = $_REQUEST['ctcNumber'];
     $ctcMessage = $_REQUEST['ctcMessage'];
-    $catStatus = "1";
-    $catId = $myuuid;
+    $ctcId = $myuuid;
     $fName = $_REQUEST['firstName'];
     $lName = $_REQUEST['lastName'];
-    $staffAddQuery = "INSERT INTO product_category_db VALUES(
+    $staffAddQuery = "INSERT INTO contact_db VALUES(
                 '" . $ctcEmail . "',
                 '" . $ctcNumber . "',
                 '" . $ctcMessage . "',
-                '" . $catStatus . "',
-                
                 DEFAULT,
-                DEFAULT);";
+                '" . $ctcId . "',
+                '" . $fName . "',
+                '" . $lName . "');";
     echo $staffAddQuery;
     if ($posted = $connection->query($staffAddQuery)) {
         header("Location:../../front/pages/index.php");

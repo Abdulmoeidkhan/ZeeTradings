@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
 	<title>The Plaza - eCommerce Template</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="The Plaza eCommerce Template">
 	<meta name="keywords" content="plaza, eCommerce, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Favicon -->   
-	<link href="img/favicon.ico" rel="shortcut icon"/>
+	<!-- Favicon -->
+	<link href="../assets/img/favicon.ico" rel="shortcut icon" />
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
-	<link rel="stylesheet" href="css/animate.css"/>
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="../assets/css/owl.carousel.css" />
+	<link rel="stylesheet" href="../assets/css/style.css" />
+	<link rel="stylesheet" href="../assets/css/animate.css" />
 
 
 	<!--[if lt IE 9]>
@@ -26,12 +27,13 @@
 	<![endif]-->
 
 </head>
+
 <body>
 	<!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader"></div>
 	</div>
-	
+
 	<!-- Header section -->
 	<header class="header-section header-normal">
 		<div class="container-fluid">
@@ -65,10 +67,10 @@
 	<div class="page-info-section page-info">
 		<div class="container">
 			<div class="site-breadcrumb">
-				<a href="">Home</a> / 
-				<a href="">Sales</a> / 
-				<a href="">Bags</a> / 
-				<a href="">Cart</a> / 
+				<a href="">Home</a> /
+				<a href="">Sales</a> /
+				<a href="">Bags</a> /
+				<a href="">Cart</a> /
 				<span>Checkout</span>
 			</div>
 			<img src="img/page-info-art.png" alt="" class="page-info-art">
@@ -191,7 +193,7 @@
 	<!-- Page -->
 
 
-	<!-- Footer top section -->	
+	<!-- Footer top section -->
 	<section class="footer-top-section home-footer">
 		<div class="container">
 			<div class="row">
@@ -250,7 +252,7 @@
 						<h6 class="fw-title">Contact</h6>
 						<div class="text-box">
 							<p>Your Company Ltd </p>
-							<p>1481 Creekside Lane  Avila Beach, CA 93424, </p>
+							<p>1481 Creekside Lane Avila Beach, CA 93424, </p>
 							<p>+53 345 7953 32453</p>
 							<p>office@youremail.com</p>
 						</div>
@@ -259,29 +261,32 @@
 			</div>
 		</div>
 	</section>
-	<!-- Footer top section end -->	
+	<!-- Footer top section end -->
 
 
 	<!-- Footer section -->
 	<footer class="footer-section">
 		<div class="container">
 			<p class="copyright">
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</p>
+				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				Copyright &copy;<script>
+					document.write(new Date().getFullYear());
+				</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			</p>
 		</div>
 	</footer>
 	<!-- Footer section end -->
 
 
 	<!--====== Javascripts & Jquery ======-->
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/mixitup.min.js"></script>
-	<script src="js/sly.min.js"></script>
-	<script src="js/jquery.nicescroll.min.js"></script>
-	<script src="js/main.js"></script>
-    </body>
+	<script src="../assets/js/jquery-3.2.1.min.js"></script>
+	<script src="../assets/js/bootstrap.min.js"></script>
+	<script src="../assets/js/owl.carousel.min.js"></script>
+	<script src="../assets/js/mixitup.min.js"></script>
+	<script src="../assets/js/sly.min.js"></script>
+	<script src="../assets/js/jquery.nicescroll.min.js"></script>
+	<script src="../assets/js/main.js"></script>
+</body>
+
 </html>

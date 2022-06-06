@@ -59,7 +59,7 @@ if (isset($_SESSION["uId"])) {
                                         c.customerEmail as customerEmail
                                         from `order_db` as o 
                                         left join customer_user_db as c on o.orderCustomer=c.customerId  
-                                        WHERE o.deleted=0;";
+                                        WHERE o.deleted=0 and o.orderId='" . $_GET['orderId'] . "';";
                                     require("../../../functions/conn.php");
                                     $orderdata = $connection->query($orderFetch);
                                     if ($orderdata) {
@@ -71,7 +71,7 @@ if (isset($_SESSION["uId"])) {
                                                 <div class="email"><a href="mailto:<?php echo $row['customerEmail'] ?>"><?php echo $row['customerEmail'] ?></a></div>
                                             </div>
                                             <div class="col invoice-details">
-                                                <h1 class="invoice-id">INVOICE <?php echo $row['orderNumber'];?></h1>
+                                                <h1 class="invoice-id">INVOICE <?php echo $row['orderNumber']; ?></h1>
                                                 <?php echo date("m/d/Y", (strtotime($row["orderInvoiceAt"]) + (60 * 60 * 24 * 30))); ?>
                                                 <div class="date">Date of Invoice: <?php echo date("m/d/Y", strtotime($row["orderInvoiceAt"])) ?></div>
 
